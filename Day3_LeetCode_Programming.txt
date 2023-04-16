@@ -1,0 +1,84 @@
+
+
+1108. Defanging an IP Address
+
+Solution:
+
+class Solution {
+    public String defangIPaddr(String address) {
+        return address.replace(".","[.]");
+        
+    }
+}
+
+-----------------------------------------------------------------------------
+2011. Final Value of Variable After Performing Operations
+Solution:
+
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+    int x=0;
+    for(int i=0;i<operations.length;i++)
+    {
+        if(operations[i].contains("--"))
+        {
+            x+=-1;
+        }
+        else
+        {
+            x+=1;
+        }
+    }
+    return x;
+}
+}
+---------------------------------------------------------------------------------
+2114. Maximum Number of Words Found in Sentences
+Solution:
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+       int max=0;
+       for(String s:sentences)
+       {
+           max=Math.max(max,s.split(" ").length);
+       }
+       return max;
+        
+    }
+}
+----------------------------------------------------------------------------------
+1678. Goal Parser Interpretation
+Solution:
+
+class Solution {
+    public String interpret(String command) {
+        return command.replace("()","o").replace("(al)","al");
+        
+    }
+}
+----------------------------------------------------------------------------------
+771. Jewels and Stones
+
+Solution:
+
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int count=0;
+        for(int i=0;i<jewels.length();i++)
+        {
+            for(int j=0;j<stones.length();j++)
+            {
+            if(jewels.charAt(i)==stones.charAt(j))
+            {
+                count++;
+
+            }
+            }
+        }
+        return count;
+        
+    }
+}
+--------------------------------------------------------------------------------------------
+
