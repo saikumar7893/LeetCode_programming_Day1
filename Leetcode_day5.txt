@@ -1,0 +1,107 @@
+2520. Count the Digits That Divide a Number
+
+Solution:
+class Solution {
+    public int countDigits(int num) {
+        int key=num;
+        int count=0;
+        while(num>0)
+        {
+            int k=num%10;
+            if(key%k==0)
+            {
+                count++;
+            }
+            num/=10;
+
+        }
+        return count;
+        
+    }
+}
+------------------------------------------------------------------------
+1688. Count of Matches in Tournament
+
+Solution:
+
+class Solution {
+    public int numberOfMatches(int n) {
+        int sum=0,x=0;
+        while(n>1)
+        {
+            if(n%2==0)
+            {
+                x=n/2;
+            }
+            else
+            {
+                x=(n-1)/2;
+
+            }
+            n-=x;
+            sum+=x;
+        }
+        return sum;
+
+        
+    }
+}
+------------------------------------------------------------------------------------------
+2535. Difference Between Element Sum and Digit Sum of an Array
+Solution:
+
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        int sum=0,dif=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            sum+=nums[i];
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            while(nums[i]!=0)
+            {
+            int k=nums[i]%10;
+            dif+=k;
+            nums[i]/=10;
+            }
+        }
+        return (sum-dif);
+        
+    }
+}
+------------------------------------------------------------------------------------------------------
+1342. Number of Steps to Reduce a Number to Zero
+Solution:
+
+class Solution {
+    public int numberOfSteps(int num) {
+        int count=0;
+        while(num!=0)
+        {
+            if(num%2==0)
+            {
+                num=num/2;
+            count++;
+            }
+            else
+            {
+                num=num-1;
+                count++;
+            }
+        }
+        return count;
+        
+    }
+}
+-------------------------------------------------------------------------------------------
+1323. Maximum 69 Number
+
+Solution:
+
+class Solution {
+    public int maximum69Number (int num) {
+        return Integer.valueOf(String.valueOf(num).replaceFirst("6", "9"));
+    }
+}
+-------------------------------------------------------------------------------------------
