@@ -1,0 +1,85 @@
+28. Find the Index of the First Occurrence in a String
+
+Solution:
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+        
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+
+231. Power of Two
+
+Solution:
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+       if(n==0 || n==-2147483648) return false;
+        if((n & (n-1))==0)
+        return true;
+        else
+        return false;
+        
+    }
+}
+------------------------------------------------------------------------------------------------
+26. Remove Duplicates from Sorted Array
+
+Solution:
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        HashSet<Integer>set=new HashSet<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            set.add(nums[i]);
+        }
+       ArrayList<Integer>al=new ArrayList<>(set);
+       Collections.sort(al);
+       for(int i=0;i<al.size();i++)
+       {
+           nums[i]=al.get(i);
+       }
+       return al.size();
+
+     
+
+        
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+1431. Kids With the Greatest Number of Candies
+
+Solution:
+
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int max=candies[0];
+        for(int i=0;i<candies.length;i++)
+        {
+            if(candies[i]>max)
+            {
+                max=candies[i];
+            }
+        }
+        ArrayList<Boolean>al=new ArrayList<>();
+        for(int i=0;i<candies.length;i++)
+        {
+            if((candies[i]+extraCandies)>=max)
+            {
+                al.add(true);
+            }
+            else
+            {
+                al.add(false);
+            }
+        }
+        return al;
+        
+        
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,65 @@
+2367. Number of Arithmetic Triplets
+
+Solution:
+
+class Solution {
+    public int arithmeticTriplets(int[] nums, int diff) {
+      int count=0;
+      for(int i=0;i<nums.length-2;i++)
+      {
+        for(int j=0;j<nums.length-1;j++)
+        {
+          for(int k=0;k<nums.length;k++)
+          {
+            if(nums[j]-nums[i]==diff && nums[k]-nums[j]==diff)
+            {
+              count++;
+            }
+          }
+        }
+      }
+      return count;
+        
+    }
+}
+--------------------------------------------------------------------------------------------------------
+2006. Count Number of Pairs With Absolute Difference K
+
+Solution:
+
+class Solution {
+    public int countKDifference(int[] nums, int k) {
+       int n=nums.length;
+       int count=0;
+       for(int i=0;i<n-1;i++){
+           for(int j=0;j<n;j++){
+               int m=Math.abs(nums[i]-nums[j]);
+               if(i<j && m==k ){
+                   count++;
+               }
+           }
+       } 
+       return count;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------
+1832. Check if the Sentence Is Pangram
+
+Solution:
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        HashMap<Character,Integer>hm=new HashMap<>();
+        for(int i=0;i<sentence.length();i++)
+        {
+            hm.put(sentence.charAt(i),1);
+        }
+        if(hm.size()==26)
+        return true;
+        else
+        return false;
+        
+    }
+}
+----------------------------------------------------------------------------------------------------
